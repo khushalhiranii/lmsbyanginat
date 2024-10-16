@@ -24,7 +24,7 @@ const renderReactApp = (containerId, basename = '/') => {
       </React.StrictMode>
     );
   } else {
-    console.error(`No container is found for ID: ${containerId}`);
+    console.error(`No container found with ID: ${containerId}`);
   }
 };
 
