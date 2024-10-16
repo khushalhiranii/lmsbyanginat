@@ -1,4 +1,3 @@
-// vite.config.js
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
@@ -7,8 +6,8 @@ export default defineConfig({
   build: {
     rollupOptions: {
       output: {
-        format: 'iife', // Self-contained script
-        entryFileNames: 'index.js', // Rename to avoid hashed filenames
+        format: 'iife', // Self-contained Immediately Invoked Function Expression
+        entryFileNames: 'index.js', // Ensure predictable filename
         globals: {
           react: 'React',
           'react-dom': 'ReactDOM',
@@ -16,8 +15,10 @@ export default defineConfig({
       },
     },
     lib: {
-      entry: './src/main.jsx', // Adjust this to your entry point
-      name: 'MyReactApp',
+      entry: './src/main.jsx', // Entry point for your app
+      name: 'MyReactApp', // Global variable name
+      fileName: 'my-react-app', // Output filename prefix
+      formats: ['iife'], // Ensure the correct format
     },
   },
 });
