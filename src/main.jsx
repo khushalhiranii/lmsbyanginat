@@ -6,7 +6,6 @@ import { Provider } from 'react-redux';
 import { store } from './store/store';
 import ThemeContext from './context/ThemeContext';
 
-// Function to dynamically render the app in the specified container
 const renderReactApp = (containerId, basename = '/') => {
   const container = document.getElementById(containerId);
 
@@ -28,12 +27,5 @@ const renderReactApp = (containerId, basename = '/') => {
   }
 };
 
-// Optional cleanup function to unmount the app
-const unmountReactApp = (containerId) => {
-  const container = document.getElementById(containerId);
-  if (container) ReactDOM.unmountComponentAtNode(container);
-};
-
-// Expose render and unmount functions to the global window object
+// Expose the render function to the global window object
 window.renderReactApp = renderReactApp;
-window.unmountReactApp = unmountReactApp;
