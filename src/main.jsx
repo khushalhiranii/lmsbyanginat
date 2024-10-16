@@ -1,4 +1,3 @@
-// main.jsx
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App.jsx';
@@ -11,6 +10,7 @@ const renderReactApp = (containerId, basename = '/') => {
   const container = document.getElementById(containerId);
 
   if (container) {
+    console.log('Rendering React app...');
     const root = ReactDOM.createRoot(container);
     root.render(
       <React.StrictMode>
@@ -28,5 +28,6 @@ const renderReactApp = (containerId, basename = '/') => {
   }
 };
 
-// Expose the render function to the global window object
+// Expose the render function globally
 window.renderReactApp = renderReactApp;
+console.log('renderReactApp exposed to window:', window.renderReactApp);
